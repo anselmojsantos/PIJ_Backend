@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model orders {
+  id        Int      @id @default(autoincrement())
+  waiter    String
+  table     String
+  order     Json
+  status    String
+  createdAt DateTime @default(now())
+  statuspay String @default("Não Pago")
+}
+
+model product_categories {
+  id       Int        @id @default(autoincrement())
+  name     String
+  products products[]
+}
+
+model products {
+  id                 Int                @id @default(autoincrement())
+  name               String
+  price              Float
+  productCategoryId  Int
+  product_categories product_categories @relation(fields: [productCategoryId], references: [id])
+}
+
+model waiters {
+  id   Int    @id @default(autoincrement())
+  name String
+}
+
+model logdash {
+  id       Int    @id @default(autoincrement())
+  name     String @db.VarChar(200)
+  email    String @unique(map: "user_email_key") @db.VarChar(200)
+  password String @db.VarChar(255)
+}
+
+model products_details {
+  id        Int      @id @default(autoincrement())
+  order     String
+  createdAt DateTime @default(now())
+}
+
+model tables {
+  id     Int    @id @default(autoincrement())
+  table  String @unique
+  status String
+}
