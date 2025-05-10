@@ -1,7 +1,7 @@
 import Fastify from "fastify";
 import fastifyCors from '@fastify/cors';
 import dotenv from 'dotenv';
-import { createUsers } from "./auth/routes/login_user";
+import { CreateUsers } from "./auth/routes/login_user";
 import { DelOders } from "./auth/routes/delPedidos";
 import { Paytable } from './auth/routes/pay_table';
 import { RespStatus } from "./auth/routes/status";
@@ -17,7 +17,7 @@ app.register(fastifyCors,{
      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 });
 
-app.register(createUsers);
+app.register(CreateUsers);
 app.register(Paytable);
 app.register(RespStatus);
 app.register(DelOders);

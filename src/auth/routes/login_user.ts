@@ -3,14 +3,14 @@ import {createUser} from "../service/createUser";
 import { authUser } from "../search/authUser";
 
 
-export const createUsers = async(fastify: FastifyInstance)=>{
+export const CreateUsers = async(fastify: FastifyInstance)=>{
     fastify.get('/',(request,reply)=>{
         reply.send("Servidor Rodando com sucesso!")
     });
     fastify.post('/createuser', async(req, resp)=>{
         const user = await createUser({
-            name: 'Luiza Luiz', 
-            email:'luiza.is@gmail.com',
+            name: 'Anselmo Santos', 
+            email:'anselmo3.santos@gmail.com',
             password:'123456'
         });
         console.log(user)
