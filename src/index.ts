@@ -1,10 +1,10 @@
 import Fastify from "fastify";
 import fastifyCors from '@fastify/cors';
 import dotenv from 'dotenv';
-import { CreateUsers } from "./auth/routes/login_user";
-import { DelOders } from "./auth/routes/delPedidos";
-import { Paytable } from './auth/routes/pay_table';
-import { RespStatus } from "./auth/routes/status";
+import { CreateUsers } from "./app/routes/login_user";
+import { DelOders } from "./app/routes/delPedidos";
+import { Paytable } from './app/routes/pay_table';
+import { RespStatus } from "./app/routes/status";
 
 dotenv.config();
 
