@@ -4,12 +4,12 @@
   "description": "Projeto Integrador Univesp",
   "main": "index.js",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.1.0"
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsup src/index.ts --format cjs --dts --out-dir dist --clean",
-    "start": "node dist/server.cjs"
+    "start": "node dist/index.cjs"
   },
   "keywords": [],
   "author": "Grupo PJI",
