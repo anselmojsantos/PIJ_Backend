@@ -22,8 +22,8 @@ export const statusPay = async({Id, newStatus, table}:UpListOrd)=>{
         where: {id:Id},
         data: {statuspay: newStatus},
     });
-    const upStatusTb = await prisma.tables.update({
-        where: {table: table},
+    const upStatusTb = await prisma.tables_.update({
+        where: {table_number: table},
         data: {status:"1"},
     });
     return updteStatus;

@@ -22,7 +22,11 @@ app.register(Paytable);
 app.register(RespStatus);
 app.register(DelOders);
 
-app.listen({port:PORT},(err, address) => {
+app.listen({
+    host:'0.0.0.0',
+    port: PORT
+    },
+    (err, address) => {
     if(err) {
         console.error('Erro ao iniciar o servidor',err);
         process.exit(1);

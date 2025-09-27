@@ -5,18 +5,17 @@ export const payTable = async()=>{
     select:{
         id: true,
         waiter: true,
-        table: true,
-        order: true,
-        createdAt: true,
+        table_number: true,
+        order_items: true,
+        created_at: true,
         status:true,
-        statuspay:true
     }
    });
    const result = searchTable.map(order => {
    
-    const items = typeof order.order === 'string' 
-      ? JSON.parse(order.order) 
-      : order.order;
+    const items = typeof order.order_items === 'string' 
+      ? JSON.parse(order.order_items) 
+      : order.order_items;
     
     const processedItems = items.map((item: { price: number; quantity: number }) => ({
       ...item,
