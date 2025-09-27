@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsup src/server.ts --format cjs --dts --out-dir dist --clean",
+    "build": "tsup src/index.ts --format cjs --dts --out-dir dist --clean",
     "start": "node dist/server.cjs"
   },
   "keywords": [],
