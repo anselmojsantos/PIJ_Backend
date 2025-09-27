@@ -31,5 +31,5 @@ app.listen({
         console.error('Erro ao iniciar o servidor',err);
         process.exit(1);
     }
-    console.log(`Servidor rodando em ${address}`);
+    console.log(`Server Runing ${address}`);
 });
